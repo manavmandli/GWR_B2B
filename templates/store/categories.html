@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- HERO SECTION-->
+<div class="container">
+    <!-- CATEGORIES SECTION-->
+    <section class="pt-5">
+        <header class="text-center">
+            <p class="small text-muted small text-uppercase mb-1">Carefully created collections</p>
+            <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
+        </header>
+        <div class="row">
+            {% if categories %} {% for category in categories %}
+
+            <div class="col-md-4 mb-4 mb-md-5">
+                <a class="category-item" href="{% url 'store:category-products' category.slug %}">
+                  {% if category.category_image %}
+                    <img class="img-fluid" src="{{ category.category_image.url }}" alt="{{ category.title }}">
+                    {% else %}
+                    <img class="img-fluid" src="{% static 'img/cat-img-1.jpg' %}" alt="{{ category.title }}">
+                  {% endif %}
+                  <strong class="category-item-title">{{ category.title }}</strong>
+                </a>
+            </div>
+
+            {% endfor %} {% endif %}
+        </div>
+    </section>
+
+
+
+
+
+    <!-- SERVICES-->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="d-inline-block">
+                        <div class="media align-items-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                                <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                              </svg>
+                      <use xlink:href="#delivery-time-1"> </use>
+                    </svg>
+                            <div class="media-body text-left ml-3">
+                                <h6 class="text-uppercase mb-1">Shipping</h6>
+                                <p class="text-small mb-0 text-muted">Shipping with High Sequrity by creating your jwellery insurance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-3 mb-lg-0">
+                    <div class="d-inline-block">
+                        <div class="media align-items-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+                      <use xlink:href="#helpline-24h-1"> </use>
+                    </svg>
+                            <div class="media-body text-left ml-3">
+                                <h6 class="text-uppercase mb-1">Customize jewlery</h6>
+                                <p class="text-small mb-0 text-muted">Making Customize Jwelery as per retailor requirements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-inline-block">
+                        <div class="media align-items-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-stripe" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6.226 5.385c-.584 0-.937.164-.937.593 0 .468.607.674 1.36.93 1.228.415 2.844.963 2.851 2.993C11.5 11.868 9.924 13 7.63 13a7.662 7.662 0 0 1-3.009-.626V9.758c.926.506 2.095.88 3.01.88.617 0 1.058-.165 1.058-.671 0-.518-.658-.755-1.453-1.041C6.026 8.49 4.5 7.94 4.5 6.11 4.5 4.165 5.988 3 8.226 3a7.29 7.29 0 0 1 2.734.505v2.583c-.838-.45-1.896-.703-2.734-.703Z"/>
+                              </svg>
+                      <use xlink:href="#label-tag-1"> </use>
+                    </svg>
+                            <div class="media-body text-left ml-3">
+                                <h6 class="text-uppercase mb-1">Online Payment</h6>
+                                <p class="text-small mb-0 text-muted">Online Payments through Sequre payment-gateway</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NEWSLETTER-->
+    <section class="py-5">
+        <div class="container p-0">
+            <div class="row">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <h5 class="text-uppercase">Let's Connect with Us!</h5>
+                    <p class="text-small text-muted mb-0">Subscribe Our portal for latest Update </p>
+                </div>
+                
+                <div class="col-lg-6">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="input-group flex-column flex-sm-row mb-3">
+                            <input class="form-control form-control-lg py-3" type="email" name="email" placeholder="Enter your email address" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark btn-block" id="button-addon2" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

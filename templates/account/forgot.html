@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+    <div class="container py-5">
+      <div class="col-md-8 offset-2">
+
+      <h1 class="mb-5">Password Reset</h1>
+      <p class="text-secondary">Add your Email Address to get password reset link.</p>
+      
+      <div class="card mb-4" id="forms">
+        
+        <div class="card-body">
+            
+          {% include 'partials/_messages.html' %}
+
+              <form action="{% url 'store:forgot_otp' %}" method="post">{% csrf_token %}
+                <label for="">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email_id" required>
+                <br>
+                  <button type="submit" name="id" id="email_data" class="btn btn-primary">Send OTP</button>
+              </form>
+              <br>
+              <form action="{% url 'store:forgot_pass' %}" method="post">{% csrf_token %}
+                <label for="">Enter OTP</label> 
+                {% if enable_otp == 1 %}
+                <input type="text" name="mail_id" id="mail_id" hidden>
+                <input type="number" class="form-control" id="otp" name="otp" required>
+                <button type="submit" name="id" id="forgot_btn" class="btn btn-primary">Validate</button>
+                {% else %}
+                <input type="number" class="form-control" id="otp" name="otp" disabled>
+                <button type="submit" name="id" class="btn btn-primary" disabled>Validate</button>
+                {% endif %}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script>
+    setTimeout(() => {
+      if(document.getElementById("message")!=null){
+        document.getElementById("message").style.display = "none";
+      }
+    }, 2000);
+    document.getElementById("email_data").addEventListener("click",()=>{
+      let mail = document.getElementById("email").value;
+      let item = {
+        "email":mail,
+      }
+      localStorage.setItem("user_data",JSON.stringify(item));
+    })
+    data = JSON.parse(localStorage.user_data);
+    document.getElementById("mail_id").value = data["email"];
+    console.log(document.getElementById("mail_id").value)
+  </script>
+  {% endblock content %}

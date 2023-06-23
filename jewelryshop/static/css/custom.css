@@ -1,0 +1,366 @@
+.a2 {
+    font-size: 0.9rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-bottom: solid 5px goldenrod;
+}
+
+.bg-white {
+    border-bottom: solid 1px goldenrod;
+}
+
+.navbar-brand>img {
+    width: 35%;
+    vertical-align: middle;
+    border-style: none;
+    /* height: 33%; */
+    justify-content: center;
+    text-align: center;
+    margin-left: 6rem;
+}
+
+.home-company-area {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+.company-img>img {
+    max-width: 100%;
+    height: 25rem;
+    margin-left: 10rem;
+}
+
+.company-tittle>span {
+    font-family: inherit;
+    color: #6c757d;
+}
+
+.right_tick {
+    color: #dcb14a;
+}
+
+.company-tittle {
+    text-align: left;
+}
+
+.box-btn {
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 10px;
+    line-height: 1;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    text-transform: capitalize;
+    position: relative;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    background-color: black;
+}
+
+.box-btn:hover {
+    text-decoration: none;
+    background-color: goldenrod;
+    color: black;
+}
+
+
+/* testimonials page */
+
+#Testimonials {
+    margin-top: 3rem;
+}
+
+.outerdiv {
+    margin-top: -3rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.innerdiv {
+    transform: scale(0.9);
+    margin: 1rem;
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-rows: repeat(2, 22rem);
+    grid-template-columns: repeat(4, 17rem);
+}
+
+.eachdiv {
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 5px 5px 20px #6d6b6b6b;
+    color: white;
+}
+
+.div1 {
+    background: goldenrod;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-repeat: no-repeat;
+    background-position-x: 25rem;
+}
+
+.div2 {
+    background: #49556B;
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.div3 {
+    background: white;
+    grid-column: 4/5;
+    grid-row: 1/3;
+    color: black;
+}
+
+.div4 {
+    background: white;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    color: black;
+}
+
+.div5 {
+    background: black;
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+.userdetails {
+    display: flex;
+}
+
+.imgbox {
+    margin-right: 1rem;
+}
+
+.imgbox img {
+    border-radius: 50%;
+    width: 2rem;
+    border: 2px solid #cec5c5;
+}
+
+.detbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detbox p {
+    margin: 0;
+}
+
+.detbox .name {
+    color: hsl(0, 0%, 81%);
+    font-size: 0.9rem;
+    margin-bottom: 0.1rem;
+    font-weight: 600;
+}
+
+.detbox .name.dark {
+    color: #49505A;
+}
+
+.detbox .designation {
+    color: hsl(0, 0%, 81%);
+    opacity: 50%;
+    font-size: 0.8rem;
+}
+
+.detbox .designation.dark {
+    color: #49505A;
+}
+
+.review h4 {
+    font-size: 1.4rem;
+    color: #F3DEFF;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.review.dark h4 {
+    color: #4B5258;
+}
+
+.review p {
+    font-size: 0.95rem;
+    color: #F3DEFF;
+    font-weight: 500;
+    opacity: 50%;
+    line-height: 1.3;
+}
+
+.review.dark p {
+    color: #0e0e0e;
+}
+
+.attribution {
+    font-size: 1rem;
+    line-height: 1.5;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    text-align: right;
+}
+
+.attribution a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .innerdiv {
+        transform: scale(0.7);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .innerdiv {
+        transform: scale(0.6);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .div1 {
+        background-position-x: 10rem;
+    }
+    .innerdiv {
+        display: flex;
+        flex-direction: column;
+        transform: scale(1);
+        margin: 2rem;
+        margin-bottom: 5rem;
+    }
+    .attribution {
+        position: relative;
+    }
+}
+
+
+/* services page css */
+
+.ser{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+.sers{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: green;
+}
+.serc{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: red;
+}
+.first_three, .second_three{
+    display: flex;
+}
+.second_three{
+    margin-bottom: 2rem;
+}
+.box1{
+    border: 2px solid goldenrod;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    max-width: 20rem;
+    background-color: whitesmoke;
+    /* background-color:    #111111; */
+    /* color: white; */
+}
+.box1_head{
+    text-align: center;
+    font-weight: 550;
+}
+.box1_des{
+    font-size: 0.9rem;
+    text-align:left;
+}
+.box1:hover{
+    background-color: #111111;
+    color: white;
+    border: 1px solid silver;
+    box-shadow: 1px 1px 5px 3px silver;
+}
+.flow img{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* contactus page design */
+/* Style inputs with type="text", select elements and textareas */
+input[type=text],[type=number],[type=file] , textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: goldenrod;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: black;
+    color: white;
+  }
+.contact{
+    color: goldenrod;
+    font-weight: 400;
+    border-bottom: 1px solid silver;
+}
+.submit{
+    width: 100%;
+    padding: 0.3rem;
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    margin-bottom: 0.8rem;
+}
+.banner{
+    color: white;
+}
+.banner-2{
+    color: silver;
+}
+.trc{
+    margin-left: 7.5rem;
+}
+.chek{
+    margin-left: 7.5rem;
+}
+.str{
+    margin-left: 7.5rem;
+}
+.chr{
+    margin-left: 7.5rem;
+}
+.certi{
+    margin-left: 7.5rem;
+}
+.vuser{
+    margin-left: 7.5rem;
+}

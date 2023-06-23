@@ -1,0 +1,76 @@
+{% load static %}
+
+<!-- navbar-->
+<h1 class="a2 ">
+    <marquee behavior="scroll " direction="left ">Today's Rate: 24KGold 999: 60,380/-(10 gram) | 22KGold 916:59,009/-(10 gram)</marquee>
+</h1>
+<header class="header bg-white">
+
+
+    <div class="px-0 px-lg-3">
+        <nav class="navbar navbar-expand-lg navbar-light py-4 px-lg-0">
+            <a class="navbar-brand" href="{% url 'store:home' %}">
+                <img class="logo" src="{% static 'img/logo.png' %}" alt="logo">
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <!-- Link--><a class="nav-link active" href="{% url 'store:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prouducts</a>
+                        <div class="dropdown-menu mt-3" aria-labelledby="pagesDropdown">
+                            {% if categories_menu %} {% for cat_menu in categories_menu %}
+                            <a class="dropdown-item border-0 transition-link" href="{% url 'store:category-products' cat_menu.slug %}">{{cat_menu.title}}</a> {% endfor %} {% endif %}
+                            <hr>
+                            <a class="dropdown-item border-0 transition-link" href="{% url 'store:all-categories' %}">All Products</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <!-- Link--><a class="nav-link" href="{% url 'store:services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Link--><a class="nav-link" href="{% url 'store:testimonials' %}">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Link--><a class="nav-link" href="{% url 'store:contact' %}">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'store:cart' %}"> <i class="fas fa-dolly-flatbed mr-1 text-gray"></i>Cart<small class="text-gray">({{cart_items.count}})</small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'store:likeproduct' %}"> <i class="far fa-heart mr-1"></i>
+                            <!-- <small class="text-gray"> (0)</small> -->
+                        </a>
+                    </li>
+                    {% comment %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="fas fa-user-alt mr-1 text-gray"></i>My Account</a>
+                    </li> {% endcomment %}
+
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt mr-1 text-gray"></i>My Account</a></a>
+
+                        <div class="dropdown-menu mt-3" aria-labelledby="pagesDropdown">
+
+                            <a class="dropdown-item border-0 transition-link" href="{% url 'store:profile' %}">Profile</a>
+                            <a class="dropdown-item border-0 transition-link" href="{% url 'store:cart' %}">Cart</a>
+                            <a class="dropdown-item border-0 transition-link" href="{% url 'store:orders' %}">Orders</a>
+                            <a class="dropdown-item border-0 transition-link" href="{% url 'store:password-change' %}">Change Password</a>
+
+                            <hr>
+                            <a class="dropdown-item border-0 transition-link" href="{% url 'store:logout' %}">Log Out</a>
+
+                    </li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'store:login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'store:register' %}">Create Account</a></li>
+                    {% endif %}
+                </ul>
+                </div>
+        </nav>
+        </div>
+</header>
+</div>
