@@ -1,10 +1,10 @@
 FROM python:3
 
-RUN pip install django==4.1
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN python manage.py migrate
-
-EXPOSE 8001
-CMD ["python", "manage.py","runserver","0.0.0.0:8001"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
